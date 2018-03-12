@@ -1,5 +1,5 @@
-# Define an Amazon Linux 2 AMI.
-data "aws_ami" "amazon_linux_2" {
+# Define an Amazon Linux AMI.
+data "aws_ami" "amazon_linux" {
   most_recent = true
 
   owners = [
@@ -9,7 +9,7 @@ data "aws_ami" "amazon_linux_2" {
   filter {
     name = "name"
     values = [
-      "amzn2-ami-hvm-*"
+      "amzn-ami-hvm-*"
     ]
   }
 
@@ -35,8 +35,8 @@ data "aws_ami" "amazon_linux_2" {
   }
 }
 
-# Define an Amazon Linux AMI.
-data "aws_ami" "amazon_linux" {
+# Define an Amazon Linux 2 AMI.
+data "aws_ami" "amazon_linux_2" {
   most_recent = true
 
   owners = [
@@ -46,7 +46,7 @@ data "aws_ami" "amazon_linux" {
   filter {
     name = "name"
     values = [
-      "amzn-ami-hvm-*"
+      "amzn2-ami-hvm-*"
     ]
   }
 
