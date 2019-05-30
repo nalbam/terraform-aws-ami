@@ -1,13 +1,5 @@
 # Define an Amazon Linux AMI.
 
-terraform {
-  required_version = ">= 0.12"
-}
-
-provider "aws" {
-  region = var.region
-}
-
 data "aws_ami" "amazon_linux" {
   most_recent = true
 
