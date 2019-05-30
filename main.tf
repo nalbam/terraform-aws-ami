@@ -1,36 +1,45 @@
 # Define an Amazon Linux AMI.
+
+terraform {
+  required_version = ">= 0.12"
+}
+
+provider "aws" {
+  region = var.region
+}
+
 data "aws_ami" "amazon_linux" {
   most_recent = true
 
   owners = [
-    "137112412989"
+    "137112412989",
   ]
 
   filter {
     name = "name"
     values = [
-      "amzn-ami-hvm-*"
+      "amzn-ami-hvm-*",
     ]
   }
 
   filter {
     name = "architecture"
     values = [
-      "x86_64"
+      "x86_64",
     ]
   }
 
   filter {
     name = "root-device-type"
     values = [
-      "ebs"
+      "ebs",
     ]
   }
 
   filter {
     name = "virtualization-type"
     values = [
-      "hvm"
+      "hvm",
     ]
   }
 }
@@ -40,34 +49,34 @@ data "aws_ami" "amazon_linux_2" {
   most_recent = true
 
   owners = [
-    "137112412989"
+    "137112412989",
   ]
 
   filter {
     name = "name"
     values = [
-      "amzn2-ami-hvm-*"
+      "amzn2-ami-hvm-*",
     ]
   }
 
   filter {
     name = "architecture"
     values = [
-      "x86_64"
+      "x86_64",
     ]
   }
 
   filter {
     name = "root-device-type"
     values = [
-      "ebs"
+      "ebs",
     ]
   }
 
   filter {
     name = "virtualization-type"
     values = [
-      "hvm"
+      "hvm",
     ]
   }
 }
@@ -79,34 +88,34 @@ data "aws_ami" "rhel_7_4" {
 
   // Red Hat's account ID.
   owners = [
-    "309956199498"
+    "309956199498",
   ]
 
   filter {
     name = "name"
     values = [
-      "RHEL-7.4*"
+      "RHEL-7.4*",
     ]
   }
 
   filter {
     name = "architecture"
     values = [
-      "x86_64"
+      "x86_64",
     ]
   }
 
   filter {
     name = "root-device-type"
     values = [
-      "ebs"
+      "ebs",
     ]
   }
 
   filter {
     name = "virtualization-type"
     values = [
-      "hvm"
+      "hvm",
     ]
   }
 }
